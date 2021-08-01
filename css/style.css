@@ -1,15 +1,7 @@
 p {border: 5px solid #000 }
 
-.welcome{
 
-height: 120;
-width: 150;
-position: absolute;
-background-color: sandybrown;
 
-}
-ol { float: left;}
-ul{float: right;}
 
 
 
@@ -22,17 +14,19 @@ body {
     
     margin-top: 700px;
   }
-  article {
+  article { float: right;
+    
     width: 300px;
     height: 300px;
     background-color:beige
     margin : 15px;
+    
   }
   
   
   h1 {position: fixed;
   
-    right: 20px;
+    left: 20px;
     top: 20px;
     width: 300px;
     height:300px;
