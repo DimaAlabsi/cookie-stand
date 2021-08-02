@@ -1,13 +1,13 @@
 let salesData = document.getElementById('salesData');
 
+
+
+
+
+
+
+
 // Seattle	23	65	6.3
-
-
-
-
-
-
-
 
 const Sattle = {
   name:  'Sattle' ,
@@ -49,11 +49,11 @@ const Sattle = {
     articleElement.appendChild(ulElement);
     for (let i = 0; i< this.hours.length; i++){
 
-      this.AmountsOfCookiesForHour = this.numberOfCustomersPerHour(23,56) * this.average ;
+      this.AmountsOfCookiesForHour = Math.ceil(this.numberOfCustomersPerHour(23,56) * this.average) ;
       let liElement = document.createElement('li');
       liElement.textContent = this.hours[i] + this.AmountsOfCookiesForHour + ' cookies';
-      ulElement.appendChild(liElement);
-      
+      articleElement.appendChild(liElement);
+
     }
 
     // let liElement = document.createElement('li');
@@ -111,11 +111,11 @@ const Tokyo = {
     articleElement.appendChild(ulElement);
     for (let i = 0; i< this.hours.length; i++){
 
-      this.AmountsOfCookiesForHour = (this.numberOfCustomersPerHour(3,24) * this.average );
+      this.AmountsOfCookiesForHour = Math.ceil (this.numberOfCustomersPerHour(3,24) * this.average );
       let liElement = document.createElement('li');
       liElement.textContent = this.hours[i] + this.AmountsOfCookiesForHour + ' cookies';
-      ulElement.appendChild(liElement);
-      
+      articleElement.appendChild(liElement);
+
 
 
     }
@@ -178,10 +178,11 @@ const Dubai = {
     articleElement.appendChild(ulElement);
     for (let i = 0; i< this.hours.length; i++){
     //   this.numberOfCustomersPerHour(11,38);
-      this.AmountsOfCookiesForHour = this.numberOfCustomersPerHour(3,24) * this.average ;
+      this.AmountsOfCookiesForHour = Math.ceil(this.numberOfCustomersPerHour(3,24) * this.average) ;
       let liElement = document.createElement('li');
       liElement.textContent = this.hours[i] + this.AmountsOfCookiesForHour + ' cookies';
-      ulElement.appendChild(liElement);}
+      // ulElement.appendChild(liElement);
+      articleElement.appendChild(liElement);}
 
   }
 };
@@ -232,10 +233,11 @@ const Paris = {
     articleElement.appendChild(ulElement);
     for (let i = 0; i< this.hours.length; i++){
 
-      this.AmountsOfCookiesForHour = this.numberOfCustomersPerHour(20,38) * this.average ;
+      this.AmountsOfCookiesForHour = Math.ceil(this.numberOfCustomersPerHour(20,38) * this.average) ;
       let liElement = document.createElement('li');
       liElement.textContent = this.hours[i] + this.AmountsOfCookiesForHour + ' cookies';
-      ulElement.appendChild(liElement);}
+      ulElement.appendChild(liElement);
+      articleElement.appendChild(liElement);}
 
   }
 };
@@ -253,7 +255,8 @@ const Lima = {
   min: 2,
   max : 16,
   average : 4.6,
-
+  total: 0,
+  array :[0],
   hours : [6 + 'am : ',7 +'am : ' ,8 +' am :',9 + ' am :',10 +' am : ',11 +' am : ',12 +' pm : ',13 +' pm : ',14 +' pm : ',15 +' pm : ',16 +' pm : ',17 +' pm : ',18 +' pm : ',19 +' pm : '],
   gitAmountsOfCookiesForHour   : 0,
   AmountsOfCookiesForHour : 0,
@@ -287,12 +290,35 @@ const Lima = {
 
     let ulElement = document.createElement('ul');
     articleElement.appendChild(ulElement);
+
     for (let i = 0; i< this.hours.length; i++){
 
-      this.AmountsOfCookiesForHour = this.numberOfCustomersPerHour(2,16) * this.average ;
+      this.AmountsOfCookiesForHour = Math.ceil(this.numberOfCustomersPerHour(2,16) * this.average) ;
       let liElement = document.createElement('li');
       liElement.textContent = this.hours[i] + this.AmountsOfCookiesForHour + ' cookies';
-      ulElement.appendChild(liElement);}
+      ulElement.appendChild(liElement);
+      articleElement.appendChild(liElement);
+      // let totalElement = document.createElement('');
+      // totalElement.textContent=this.array;
+      // articleElement.appendChild(totalElement);
+
+      // this.total=this.AmountsOfCookiesForHour;
+      // this.total +=this.AmountsOfCookiesForHour;
+      // // this.total += this.array[];
+      // console.log(this.total);
+
+      this.array[i]= this.AmountsOfCookiesForHour;
+      this.total += this.array[i];
+      return this.total;
+      this.total= this.array[i];
+      console.log(this.total);
+
+      // let totalElement = document.createElement('li');
+      // totalElement.textContent(this.total);
+      //  articleElement.appendChild(totalElement);
+
+
+    }
 
   }
 };
