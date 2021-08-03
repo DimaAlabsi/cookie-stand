@@ -2,13 +2,20 @@
     p {border: 5px solid #000 }
 
 
+/* img {float: right;} */
 
 
 
-
- body  {
+ body  { background-color: rgba(87, 85, 86, 0.548);
      height : 4000px
   }
+  #h3style {
+    background-color: rgb(184, 181, 183);
+    border: 5px solid #000;
+    text-align: center;
+   
+  }
+
   
    #section { 
    
@@ -25,16 +32,44 @@
   }
   
     h1 {position: fixed;
+  color: rgb(214, 203, 203);
+    right: 20px;
+    top: 60px;
+    width: 100px; 
+    height:100px;
+    background-color:#424041; }
+
+
+   table   {
+  text-align: center;
   
-    left: 20px;
-    top: 20px;
-    width: 300px; 
-    height:300px;
-    background-color:rgb(165, 160, 165); }
+   right: 150px;
+    top: 60px;
+    width: 1000px; 
+    height:100px;
+   }
   
-  
-   th, td { background: antiquewhite;
-    border: 10px solid rgba(196, 89, 125, 0.89)
+   th, td { background: #FCD8D4;
+    border: 10px solid #d409b6;
   } 
+  /* img { width: 300px;
+  height:100px;} */
    
-  
+   a {
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 500ms;
+    color: black;
+  }
+  a:hover {
+    color: rgb(24, 20, 20);
+    background-color: rgb(241, 183, 227);
+  }
+  article{ border: 5px solid #000;
+  background-color: rgb(149, 151, 153);
+  align-items: center;
+  align-content: center;
+  }
+  article:hover {
+    color: rgb(7, 7, 7);
+    background-color: rgb(10, 9, 10)}
