@@ -5,6 +5,9 @@
 let salesData = document.getElementById('salesData');
 
 
+let cookiesForm = document.getElementById('cookiesForm');
+
+
 let h1 = document.createElement('h1');
 salesData.appendChild(h1);
 h1.textContent = 'SALES OF DATA';
@@ -123,23 +126,66 @@ function hourarr() {
 hourarr();
 
 
-// Data.prototype.totalEachHoue= function () {
-
-//   for (let i = 0; i < hours.length; i++) {
-//     let tr2 = document.createElement('tr');
-//     table.appendChild(tr2);
-//     let td2 = document.createElement('td');
-//     td2.textContent = `${this.cookiesSales[i]}`;
-//     tr2.appendChild(td2);
-
-//   }
 
 
 
-// };
 
-// totalEachHoue();
 
+Seattle.getCookies(23, 65);
+Seattle.render();
+
+Tokyo.getCookies(3, 24);
+Tokyo.render();
+
+Dubai.getCookies(11, 38);
+Dubai.render();
+
+Paris.getCookies(20, 38);
+Paris.render();
+
+
+Lima.getCookies(2, 16);
+Lima.render();
+tableFooter();
+
+cookiesForm.addEventListener('submit', submitlistner);
+
+
+function submitlistner(eventNewStore) {
+  eventNewStore.preventDefault();
+  let storeLocation = eventNewStore.target.location.value;
+  let min = eventNewStore.target.min.value;
+  let max = eventNewStore.target.max.value;
+  let avg = eventNewStore.target.average.value;
+  
+
+  if (max < min) {
+    alert('Maximum number must be greater than minimum number ');
+  }
+  else {
+    let newStore = new Data(storeLocation, min, max, avg, 0, [], []);
+
+   
+
+
+
+    newStore.getCookies();
+    newStore.render();
+
+
+
+
+
+
+
+
+
+  }
+
+  console.log(eventNewStore);
+
+
+}
 function tableFooter() {
   let trFooter = document.createElement('tr');
   table.appendChild(trFooter);
@@ -172,47 +218,5 @@ function tableFooter() {
   trFooter.appendChild(thhhElement);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Seattle.getCookies(23, 65);
-Seattle.render();
-
-Tokyo.getCookies(3, 24);
-Tokyo.render();
-
-Dubai.getCookies(11, 38);
-Dubai.render();
-
-Paris.getCookies(20, 38);
-Paris.render();
-
-
-Lima.getCookies(2, 16);
-Lima.render();
-
-
-
-
-
-
-tableFooter();
-
-
 
 
