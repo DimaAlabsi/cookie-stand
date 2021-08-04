@@ -48,6 +48,11 @@
     width: 1000px; 
     height:100px;
    }
+   Div table{
+     float: right;
+    width: 100px; 
+    
+  }
   
    th, td { background: #FCD8D4;
     border: 10px solid #d409b6;
