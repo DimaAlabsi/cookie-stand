@@ -14,6 +14,7 @@ h1.textContent = 'SALES OF DATA';
 
 let table = document.createElement('table');
 salesData.appendChild(table);
+ 
 
 let all = [];
 function Data(name, min, mix, average, total, customerPerHour, cookiesSales) {
@@ -148,16 +149,17 @@ Lima.getCookies(2, 16);
 Lima.render();
 tableFooter();
 
-cookiesForm.addEventListener('submit', submitlistner);
+cookiesForm.addEventListener('submit', submitListner);
 
 
-function submitlistner(eventNewStore) {
+function submitListner(eventNewStore) {
   eventNewStore.preventDefault();
   let storeLocation = eventNewStore.target.location.value;
   let min = eventNewStore.target.min.value;
   let max = eventNewStore.target.max.value;
-  let avg = eventNewStore.target.average.value;
-  
+  let avg =parseInt (eventNewStore.target.average.value);
+
+  table.deleteRow(-1);
 
   if (max < min) {
     alert('Maximum number must be greater than minimum number ');
@@ -165,26 +167,11 @@ function submitlistner(eventNewStore) {
   else {
     let newStore = new Data(storeLocation, min, max, avg, 0, [], []);
 
-   
-
-
-
     newStore.getCookies();
     newStore.render();
-
-
-
-
-
-
-
-
-
+    tableFooter();
   }
-
   console.log(eventNewStore);
-
-
 }
 function tableFooter() {
   let trFooter = document.createElement('tr');
